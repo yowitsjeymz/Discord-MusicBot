@@ -71,24 +71,15 @@ module.exports = {
 	 * Nodes to connect to
 	 * @type {import("erela.js").Node[]} */
 	nodes: [
-		{
-			identifier: "DockerNode", // log id string
-			host: "docker.lavalink",
-			port: parseInt(process.env.SERVER_PORT) || 2333,
-			password: process.env.LAVALINK_SERVER_PASSWORD || "youshallnotpass",
-			retryAmount: 15, // for lavalink connection attempts
-			retryDelay: 6000, // Delay between reconnect attempts if connection is lost.
-			secure: false, // if lavalink is running SSL
-		},
-		{
-			identifier: "LocalNode", // log id string
-			host: "localhost",
-			port: 2333,
-			password: "youshallnotpass",
-			retryAmount: 15, // for lavalink connection attempts
-			retryDelay: 6000, // Delay between reconnect attempts if connection is lost.
-			secure: false, // if lavalink is running SSL
-		},
+{
+  identifier: "RailwayNode",
+  host: "lavalink-2026",
+  port: 2333,
+  password: process.env.LAVALINK_SERVER_PASSWORD,
+  retryAmount: 15,
+  retryDelay: 6000,
+  secure: false,
+}, // <-- must have
 	],
 
 	/**
